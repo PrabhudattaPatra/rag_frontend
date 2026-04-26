@@ -44,7 +44,8 @@ async function sendMessage() {
     const aiBubble = addMessage('', 'assistant');
 
     try {
-        const response = await fetch('http://43.204.108.38:8000/api/chat', {
+        // We use a relative path here so Vercel's proxy rewrite handles the routing securely
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
